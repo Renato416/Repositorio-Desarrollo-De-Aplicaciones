@@ -17,29 +17,25 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.level_up.repository.ProductRepository
 import com.example.level_up.viewmodel.CartViewModel
+import com.example.level_up.viewmodel.ProductViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     navController: NavController,
+    productViewModel: ProductViewModel,
     cartViewModel: CartViewModel
 ) {
-    val products = ProductRepository.getProducts()
     var searchQuery by remember { mutableStateOf("") }
+    val products = productViewModel.products
 
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text("Tienda LevelUp", color = Color.White) },
                 actions = {
-                    IconButton(onClick = {
-                        navController.navigate("cart")
-                    }) {
-                        Icon(
-                            imageVector = Icons.Default.ShoppingCart,
-                            contentDescription = "Carrito",
-                            tint = Color.White
-                        )
+                    IconButton(onClick = { navController.navigate("cart") }) {
+                        Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito", tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFF2196F3))
@@ -53,7 +49,6 @@ fun HomeScreen(
                 .fillMaxSize()
                 .background(Color.Black)
         ) {
-            // Barra de búsqueda
             OutlinedTextField(
                 value = searchQuery,
                 onValueChange = { searchQuery = it },
@@ -80,9 +75,7 @@ fun HomeScreen(
                 modifier = Modifier.padding(start = 16.dp, top = 8.dp)
             )
 
-            val filteredProducts = products.filter {
-                it.name.contains(searchQuery, ignoreCase = true)
-            }
+            val filteredProducts = products.filter { it.name.contains(searchQuery, ignoreCase = true) }
 
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
@@ -92,11 +85,14 @@ fun HomeScreen(
                 contentPadding = PaddingValues(4.dp)
             ) {
                 items(filteredProducts) { product ->
-                    ProductItem(product = product) {
-                        cartViewModel.addToCart(product)
-                    }
+                    ProductItem(
+                        product = product,
+                        onAddToCart = { cartViewModel.addToCart(product) },
+                        onAddReview = { review -> productViewModel.addReview(product.id, review) }
+                    )
                 }
             }
         }
     }
 }
+

@@ -15,6 +15,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.level_up.ui.theme.LevelUPTheme
 import com.example.level_up.viewmodel.CartViewModel
+import com.example.level_up.viewmodel.ProductViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,7 @@ class MainActivity : ComponentActivity() {
 fun LevelUpApp() {
     val navController = rememberNavController()
     val cartViewModel: CartViewModel = viewModel()
+    val productViewModel: ProductViewModel = viewModel()
 
     Scaffold { innerPadding ->
         Box(
@@ -39,7 +41,11 @@ fun LevelUpApp() {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            AppNavHost(navController, cartViewModel)
+            AppNavHost(
+                navController = navController,
+                cartViewModel = cartViewModel,
+                productViewModel = productViewModel
+            )
         }
     }
 }

@@ -8,11 +8,27 @@ import androidx.navigation.compose.composable
 import com.example.level_up.ui.Screen.CartScreen
 import com.example.level_up.ui.Screen.HomeScreen
 import com.example.level_up.viewmodel.CartViewModel
+import com.example.level_up.viewmodel.ProductViewModel
 
 @Composable
-fun AppNavHost(navController: NavHostController, cartViewModel: CartViewModel) {
+fun AppNavHost(
+    navController: NavHostController,
+    productViewModel: ProductViewModel,
+    cartViewModel: CartViewModel
+) {
     NavHost(navController = navController, startDestination = "home") {
-        composable("home") { HomeScreen(navController, cartViewModel) }
-        composable("cart") { CartScreen(navController, cartViewModel) }
+        composable("home") {
+            HomeScreen(
+                navController = navController,
+                productViewModel = productViewModel,
+                cartViewModel = cartViewModel
+            )
+        }
+        composable("cart") {
+            CartScreen(
+                navController = navController,
+                cartViewModel = cartViewModel
+            )
+        }
     }
 }

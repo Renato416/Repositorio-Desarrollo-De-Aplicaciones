@@ -5,8 +5,9 @@ import androidx.lifecycle.ViewModel
 import com.example.level_up.model.Product
 
 class CartViewModel : ViewModel() {
+
     private val _cartItems = mutableStateListOf<Product>()
-    val cartItems: List<Product> = _cartItems
+    val cartItems: List<Product> get() = _cartItems
 
     fun addToCart(product: Product) {
         _cartItems.add(product)
@@ -18,9 +19,5 @@ class CartViewModel : ViewModel() {
 
     fun getTotalPrice(): Double {
         return _cartItems.sumOf { it.price }
-    }
-
-    fun clearCart() {
-        _cartItems.clear()
     }
 }
