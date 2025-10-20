@@ -39,7 +39,9 @@ class UsuarioViewModel: ViewModel() {
         val estadoActual = _estado.value
         val errores = UsuarioErrores(
             nombre = if (estadoActual.nombre.isBlank())"Campo obligatorio" else null,
-            correo = if (!estadoActual.correo.contains("@duoc.cl")) "Correo inválido" else null,
+            correo = if (!estadoActual.correo.matches(Regex("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$"))) {
+                "Correo inválido"
+            } else null,
             clave = if (estadoActual.clave.length <6 )"Debe tener almenos 6 caracteres" else null,
             direccion = if (estadoActual.direccion.isBlank())"Campo obligatorio" else null,
             edad = if (estadoActual.edad.toIntOrNull() == null || estadoActual.edad.toInt() < 18) "Debe ser mayor de 18 años" else null
