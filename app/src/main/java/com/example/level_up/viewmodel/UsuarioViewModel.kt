@@ -3,8 +3,7 @@ package com.example.level_up.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.Room
-import com.example.level_up.data.AppDatabase
+
 import com.example.level_up.data.Usuario
 import com.example.level_up.data.UsuarioDao
 import com.example.level_up.navigation.UsuarioErrores
