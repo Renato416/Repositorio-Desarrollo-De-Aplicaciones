@@ -6,6 +6,7 @@ import com.example.level_up.viewmodel.UsuarioViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.level_up.ui.LoginScreen
 import com.example.level_up.ui.RegistroScreen
 import com.example.level_up.ui.ResumenScreen
 
@@ -18,8 +19,11 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "registro"
+        startDestination = "login" // la pantalla inicial
     ) {
+        composable("login") {
+            LoginScreen(navController) // aquí va tu pantalla de bienvenida
+        }
         composable("registro") {
             RegistroScreen(navController, usuarioViewModel)
         }
