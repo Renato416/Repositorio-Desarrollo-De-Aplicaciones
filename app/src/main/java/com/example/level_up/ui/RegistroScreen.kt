@@ -6,11 +6,11 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.example.level_up.navigation.UsuarioUiState
 import com.example.level_up.viewmodel.UsuarioViewModel
 import androidx.navigation.NavController
-
 
 @Composable
 fun RegistroScreen(
@@ -18,6 +18,7 @@ fun RegistroScreen(
     view: UsuarioViewModel
 ) {
     val estado by view.estado.collectAsState(initial = UsuarioUiState())
+    val context = LocalContext.current   // Necesario para acceder a la BD
 
     Column(
         modifier = Modifier
@@ -80,6 +81,8 @@ fun RegistroScreen(
             },
             modifier = Modifier.fillMaxWidth()
         )
+
+        // Campo edad
         OutlinedTextField(
             value = estado.edad,
             onValueChange = view::onEdadChange,
@@ -93,11 +96,8 @@ fun RegistroScreen(
             modifier = Modifier.fillMaxWidth()
         )
 
-
         // Checkbox de aceptación de términos
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Checkbox(
                 checked = estado.aceptaTerminos,
                 onCheckedChange = view::onAceptarTerminosChange
@@ -105,16 +105,18 @@ fun RegistroScreen(
             Spacer(modifier = Modifier.width(8.dp))
             Text("Acepto los términos y condiciones")
         }
+
+        // Botón de registro
         Button(
             onClick = {
                 if (view.validarFormulario()) {
+                    view.registrarUsuario(context)  // Guarda en la BD
                     navController.navigate("Resumen")
                 }
-            }, modifier = Modifier.fillMaxWidth()
+            },
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text("Registrar")
         }
     }
-
-
 }
