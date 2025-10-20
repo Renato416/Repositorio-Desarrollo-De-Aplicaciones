@@ -11,8 +11,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.level_up.ui.Screen.ProductListScreen
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
 import com.example.level_up.ui.theme.LevelUPTheme
+import com.example.level_up.viewmodel.CartViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,16 +22,24 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LevelUPTheme {
-                Scaffold { innerPadding ->
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding)
-                    ) {
-                        ProductListScreen()
-                    }
-                }
+                LevelUpApp()
             }
+        }
+    }
+}
+
+@Composable
+fun LevelUpApp() {
+    val navController = rememberNavController()
+    val cartViewModel: CartViewModel = viewModel()
+
+    Scaffold { innerPadding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {
+            AppNavHost(navController, cartViewModel)
         }
     }
 }
@@ -38,6 +48,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PreviewMain() {
     LevelUPTheme {
-        ProductListScreen()
+        LevelUpApp()
     }
 }

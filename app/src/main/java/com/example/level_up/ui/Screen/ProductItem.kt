@@ -1,6 +1,5 @@
 package com.example.level_up.ui.Screen
 
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,7 +17,7 @@ import androidx.compose.ui.unit.sp
 import com.example.level_up.model.Product
 
 @Composable
-fun ProductItem(product: Product) {
+fun ProductItem(product: Product, onAddToCart: () -> Unit) {
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -47,7 +46,7 @@ fun ProductItem(product: Product) {
             Spacer(modifier = Modifier.height(8.dp))
 
             Button(
-                onClick = { },
+                onClick = { onAddToCart() },
                 colors = ButtonDefaults.buttonColors(Color(0xFF2196F3))
             ) {
                 Text("Añadir", color = Color.White)
