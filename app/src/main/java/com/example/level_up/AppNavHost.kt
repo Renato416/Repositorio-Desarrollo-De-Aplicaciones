@@ -1,6 +1,5 @@
 package com.example.level_up
 
-
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -13,8 +12,8 @@ import com.example.level_up.viewmodel.ProductViewModel
 @Composable
 fun AppNavHost(
     navController: NavHostController,
-    productViewModel: ProductViewModel,
-    cartViewModel: CartViewModel
+    cartViewModel: CartViewModel,
+    productViewModel: ProductViewModel
 ) {
     NavHost(navController = navController, startDestination = "home") {
         composable("home") {
