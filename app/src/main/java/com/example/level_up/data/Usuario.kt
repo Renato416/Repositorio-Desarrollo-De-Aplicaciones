@@ -1,5 +1,5 @@
 package com.example.level_up.data
-
+/*Usuario*/
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

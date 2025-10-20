@@ -1,5 +1,5 @@
 package com.example.level_up.data
-
+/*AppDatabase*/
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
@@ -10,6 +10,6 @@ import androidx.room.RoomDatabase
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    // Método abstracto que devuelve el DAO
+
     abstract fun usuarioDao(): UsuarioDao
 }
