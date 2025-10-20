@@ -1,34 +1,49 @@
 package com.example.level_up.navigation
-/*AppNavigation.kt*/
+
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.level_up.viewmodel.UsuarioViewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.level_up.ui.LoginScreen
-import com.example.level_up.ui.RegistroScreen
-import com.example.level_up.ui.ResumenScreen
+import com.example.level_up.ui.Screen.*
+import com.example.level_up.viewmodel.CartViewModel
+import com.example.level_up.viewmodel.ProductViewModel
+import com.example.level_up.viewmodel.UsuarioViewModel
 
 @Composable
-fun AppNavigation() {
-    /*val navController = rememberNavController()*/
-    val navController = rememberNavController()
-
-    val usuarioViewModel: UsuarioViewModel = viewModel()
-
+fun AppNavigation(
+    navController: NavHostController = rememberNavController(),
+    cartViewModel: CartViewModel = viewModel(),
+    productViewModel: ProductViewModel = viewModel(),
+    usuarioViewModel: UsuarioViewModel = viewModel()
+) {
     NavHost(
         navController = navController,
-        startDestination = "login" // la pantalla inicial
+        startDestination = "login" // pantalla inicial
     ) {
+
+        // Pantallas de usuario
         composable("login") {
-            LoginScreen(navController) // aquí va tu pantalla de bienvenida
+            LoginScreen(navController)
         }
         composable("registro") {
             RegistroScreen(navController, usuarioViewModel)
         }
-        composable("resumen") {
-            ResumenScreen(usuarioViewModel)
+
+        // Pantallas de tienda
+        composable("home") {
+            HomeScreen(
+                navController = navController,
+                productViewModel = productViewModel,
+                cartViewModel = cartViewModel
+            )
+        }
+        composable("cart") {
+            CartScreen(
+                navController = navController,
+                cartViewModel = cartViewModel
+            )
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.level_up.ui
+package com.example.level_up.ui.Screen
 /*ResumenScreen*/
 
 import androidx.compose.foundation.layout.Column

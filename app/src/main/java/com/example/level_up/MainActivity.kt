@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
+import com.example.level_up.navigation.AppNavigation
 import com.example.level_up.ui.theme.LevelUPTheme
 import com.example.level_up.viewmodel.CartViewModel
 import com.example.level_up.viewmodel.ProductViewModel
@@ -41,7 +42,7 @@ fun LevelUpApp() {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            AppNavHost(
+            AppNavigation(
                 navController = navController,
                 cartViewModel = cartViewModel,
                 productViewModel = productViewModel
