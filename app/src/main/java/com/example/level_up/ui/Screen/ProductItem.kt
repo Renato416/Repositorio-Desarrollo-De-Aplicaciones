@@ -67,26 +67,28 @@ fun ProductItem(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Botones Añadir y Reseña del mismo tamaño
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                modifier = Modifier.fillMaxWidth()
+            // Botón Añadir
+            Button(
+                onClick = { onAddToCart() },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp),
+                colors = ButtonDefaults.buttonColors(Color(0xFF2196F3))
             ) {
-                Button(
-                    onClick = { onAddToCart() },
-                    modifier = Modifier.weight(1f),
-                    colors = ButtonDefaults.buttonColors(Color(0xFF2196F3))
-                ) {
-                    Text("Añadir", color = Color.White)
-                }
+                Text("Añadir", color = Color.White)
+            }
 
-                Button(
-                    onClick = { showAddReviewDialog = true },
-                    modifier = Modifier.weight(1f),
-                    colors = ButtonDefaults.buttonColors(Color(0xFF2196F3))
-                ) {
-                    Text("Reseña", color = Color.White)
-                }
+            Spacer(modifier = Modifier.height(8.dp))
+
+            // Botón Reseña debajo
+            Button(
+                onClick = { showAddReviewDialog = true },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp),
+                colors = ButtonDefaults.buttonColors(Color(0xFF2196F3))
+            ) {
+                Text("Reseña", color = Color.White)
             }
         }
     }
@@ -116,7 +118,10 @@ fun ProductItem(
                             .heightIn(max = 200.dp)
                     ) {
                         items(product.reviews) { review ->
-                            Text("- ${review.username} (${review.rating}/5): ${review.comment}", fontSize = 14.sp)
+                            Text(
+                                "- ${review.username} (${review.rating}/5): ${review.comment}",
+                                fontSize = 14.sp
+                            )
                         }
                     }
                 }
