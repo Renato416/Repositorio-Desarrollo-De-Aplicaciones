@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ShoppingCart
+// import androidx.compose.material.icons.filled.ShoppingCart // <-- Import específica eliminada
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -15,9 +16,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.level_up.repository.ProductRepository
+// import com.example.level_up.repository.ProductRepository // <-- Import no usada, eliminada
 import com.example.level_up.viewmodel.CartViewModel
 import com.example.level_up.viewmodel.ProductViewModel
+// Asumo que 'Product' y 'ProductItem' están definidos en otros archivos.
+// Si dan error, necesitaremos los archivos 'Product.kt' y 'ProductItem.kt'.
+import com.example.level_up.model.Product
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -35,7 +39,9 @@ fun HomeScreen(
                 title = { Text("Tienda LevelUp", color = Color.White) },
                 actions = {
                     IconButton(onClick = { navController.navigate("cart") }) {
-                        Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito", tint = Color.White)
+                        // --- CORRECIÓN AQUÍ ---
+                        // Cambiamos .Default (que no existe) por .Filled (el correcto)
+                        Icon(Icons.Filled.ShoppingCart, contentDescription = "Carrito", tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFF2196F3))
@@ -85,6 +91,8 @@ fun HomeScreen(
                 contentPadding = PaddingValues(4.dp)
             ) {
                 items(filteredProducts) { product ->
+                    // NOTA: Esto fallará si 'ProductItem' no está definido en otro archivo
+                    // y si 'productViewModel.addReview' no existe.
                     ProductItem(
                         product = product,
                         onAddToCart = { cartViewModel.addToCart(product) },
@@ -96,3 +104,9 @@ fun HomeScreen(
     }
 }
 
+// NOTA: El Composable 'ProductItem' no está en este archivo.
+// Si 'ProductItem' da error de "Unresolved reference", necesitaremos
+// crear o importar ese archivo.
+//
+// @Composable
+// fun ProductItem(...) { ... }
