@@ -1,4 +1,4 @@
-package com.example.level_up.data
+package com.example.level_up.data.local
 /*UsuarioDao*/
 import androidx.room.Dao
 import androidx.room.Insert

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f773038f-bb08-4162-8447-f1f31a33ddfe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/data/util/Result.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/repository/AuthRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/ui/Screen/PasswordTextField.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/viewmodel/LoginViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/viewmodel/LoginViewModelFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/data/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/data/AppDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/data/DatabaseProvider.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/data/Usuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/data/Usuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/data/UsuarioDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/data/UsuarioDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/navigation/AppNavigation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/navigation/AppNavigation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/navigation/UsuarioUiState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/navigation/UsuarioUiState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/ui/Screen/LoginScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/ui/Screen/LoginScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/ui/Screen/RegistroScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/ui/Screen/RegistroScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/level_up/viewmodel/UsuarioViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/level_up/viewmodel/UsuarioViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Renato416"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Renato416/Repositorio-Desarrollo-De-Aplicaciones",
+    "accountId": "3469fd92-94f1-49c3-bfd4-87b9508fa58a"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="35T42jOJbKPbYl4IBuICwfVj2vS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Pantalla-principal",
+    "last_opened_file_path": "C:/Users/jumpe/AndroidStudioProjects/Repositorio-Desarrollo-De-Aplicaciones/app"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f773038f-bb08-4162-8447-f1f31a33ddfe" name="Changes" comment="" />
+      <created>1763120523272</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763120523272</updated>
+    </task>
+    <servers />
+  </component>
+</project>
