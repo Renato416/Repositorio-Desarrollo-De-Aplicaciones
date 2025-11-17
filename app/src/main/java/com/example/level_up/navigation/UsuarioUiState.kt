@@ -6,6 +6,7 @@ data class UsuarioUiState(
     val clave: String = "",
     val direccion: String = "",
     val edad: String = "",
+    val telefono: String = "", // <-- CAMPO AGREGADO
     val tieneDescuento: Boolean = false,
     val aceptaTerminos: Boolean = false,
     val errores: UsuarioErrores = UsuarioErrores()
@@ -17,5 +18,6 @@ data class UsuarioErrores(
     val correo: String? = null,
     val clave: String? = null,
     val direccion: String? = null,
-    val edad: String? = null
+    val edad: String? = null,
+    val telefono: String? = null // <-- CAMPO AGREGADO
 )

@@ -4,8 +4,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+// import androidx.compose.material.icons.Icons // <-- Comentado temporalmente
+// import androidx.compose.material.icons.filled.ArrowBack // <-- Comentado temporalmente
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -23,11 +23,17 @@ fun CartScreen(
         topBar = {
             TopAppBar(
                 title = { Text("Carrito") },
+                // --- SOLUCIÓN TEMPORAL ---
+                // Se comenta el navigationIcon para evitar el error de 'Icons.Filled.ArrowBack'
+                // Esto es porque nos falta la librería 'material-icons-extended'
+                /*
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.Filled.ArrowBack, contentDescription = "Volver")
                     }
                 },
+                */
+                // --- FIN SOLUCIÓN TEMPORAL ---
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
             )
         },
