@@ -17,11 +17,13 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.ui.text.style.TextAlign
 import com.example.level_up.data.local.AppDatabase
 import com.example.level_up.repository.AuthRepository
 import com.example.level_up.data.util.Result
 import com.example.level_up.viewmodel.LoginViewModel
 import com.example.level_up.viewmodel.LoginViewModelFactory
+
 
 /**
  * Esta es la pantalla de Login completa que usa la nueva arquitectura
@@ -93,7 +95,9 @@ fun Login(
                 focusedContainerColor = Color.Transparent,
                 unfocusedContainerColor = Color.Transparent,
                 focusedPlaceholderColor = Color.Gray,
-                unfocusedPlaceholderColor = Color.Gray
+                unfocusedPlaceholderColor = Color.Gray,
+                focusedIndicatorColor = Color.Cyan, // Color del indicador enfocado
+                unfocusedIndicatorColor = Color.Gray // Color del indicador desenfocado
             )
         )
         Spacer(modifier = Modifier.height(8.dp))
@@ -117,7 +121,9 @@ fun Login(
                 focusedContainerColor = Color.Transparent,
                 unfocusedContainerColor = Color.Transparent,
                 focusedPlaceholderColor = Color.Gray,
-                unfocusedPlaceholderColor = Color.Gray
+                unfocusedPlaceholderColor = Color.Gray,
+                focusedIndicatorColor = Color.Cyan, // Color del indicador enfocado
+                unfocusedIndicatorColor = Color.Gray // Color del indicador desenfocado
             )
         )
         Spacer(modifier = Modifier.height(16.dp))
@@ -125,12 +131,14 @@ fun Login(
         // Botón Login
         Button(
             onClick = { loginViewModel.login() }, // El ViewModel maneja el click
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF22C55E)), // Color verde
+            // --- CAMBIO DE COLOR ---
+            colors = ButtonDefaults.buttonColors(containerColor = Color.Cyan), // Color Cian
             modifier = Modifier
                 .fillMaxWidth()
                 .height(48.dp)
         ) {
-            Text("Iniciar Sesión", color = Color.White)
+            // --- CAMBIO DE COLOR TEXTO ---
+            Text("Iniciar Sesión", color = Color.Black) // Texto negro para legibilidad
         }
 
         Spacer(modifier = Modifier.height(12.dp))
@@ -146,7 +154,8 @@ fun Login(
                 "Registrate",
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color(0xFF22C55E), // Color verde
+                // --- CAMBIO DE COLOR ---
+                color = Color.Cyan, // Color Cian
                 modifier = Modifier.clickable { onRegisterClick() } // Navega al registro
             )
         }
@@ -158,7 +167,8 @@ fun Login(
             when (state) {
                 is Result.Loading -> {
                     // Muestra un indicador de carga
-                    CircularProgressIndicator(color = Color(0xFF22C55E))
+                    // --- CAMBIO DE COLOR ---
+                    CircularProgressIndicator(color = Color.Cyan) // Color Cian
                     Log.d("LoginScreen", "Login state: Loading...")
                 }
                 is Result.Success -> {
@@ -182,11 +192,21 @@ fun Login(
  */
 @Composable
 fun HeaderTitle(modifier: Modifier) {
-    Text(
-        text = "LEVEL-UP GAMER",
-        color = Color.White,
-        fontSize = 32.sp,
-        fontWeight = FontWeight.Bold,
-        modifier = modifier
-    )
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = "LEVEL-UP GAMER",
+            color = Color.White,
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = modifier
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = "Mejora tu entorno gamer.",
+            style = MaterialTheme.typography.titleMedium,
+            textAlign = TextAlign.Center,
+            // --- CAMBIO DE COLOR ---
+            color = Color.Cyan // Color Cian
+        )
+    }
 }

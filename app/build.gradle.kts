@@ -46,6 +46,8 @@ android {
 dependencies {
     // Core & Lifecycle
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.animation)
+    implementation(libs.androidx.material.icons.extended)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     // Usamos la versión de tu compañero:
@@ -94,3 +96,4 @@ dependencies {
     // (Ojo: Tu compañero escribió "adroid" pero lo corrijo a "android")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
 }
+
